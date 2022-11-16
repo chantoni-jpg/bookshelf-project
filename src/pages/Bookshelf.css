@@ -1,0 +1,12 @@
+.shelves {
+   margin-top: 100px;
+}
+
+.Books {
+    background-color: rgb(141, 152, 164);
+    min-height: 100vh;
+    min-width: 100vh;
+}
+.buttons {
+   margin-top: 30px;
+}
