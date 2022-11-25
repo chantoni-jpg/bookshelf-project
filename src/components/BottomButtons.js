@@ -15,7 +15,7 @@ const Buttons = () => {
   onAuthStateChanged(auth, (user) => {
     if (user != null) {
     } else {
-      console.log("no user");
+      //console.log("no user");
     }
   });
   return (

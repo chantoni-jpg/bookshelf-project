@@ -14,7 +14,6 @@ function Shelves() {
     const getBooks = async () => {
       const data = await getDocs(addBookCollection);
       setBooks(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
-      console.log(data);
     };
     getBooks();
   });
@@ -39,6 +38,12 @@ function Shelves() {
                 Author's First Name: {book.fname}
                 <br></br>
                 Author's Last Name: {book.lname}
+                <br></br>
+                Release Date: {book.release}
+                <br></br>
+                Book Description: {book.bdescrip}
+                <br></br>
+                Notes: {book.bnotes}
                 <Button>Edit Card</Button>
                 <Button
                   onClick={() => {
