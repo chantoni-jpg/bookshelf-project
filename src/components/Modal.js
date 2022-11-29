@@ -28,15 +28,7 @@ const AddBook = () => {
       release: releaseDate,
     });
   };
-  /*   useEffect(() => {
-    const getBooks = async () => {
-      const booksData = await getDocs(addBookCollection);
-      setBooks(
-        booksData.docs.map((doc) => ({ ...doc.booksData(), id: doc.id }))
-      );
-    };
-    getBooks();
-  }, []); */
+
   return (
     <Modal
       onClose={() => setOpen(false)}
@@ -93,6 +85,10 @@ const AddBook = () => {
                       setNotes(event.target.value);
                     }}
                   />
+                  <Button.Group>
+                    <Button>Currently Reading</Button>
+                    <Button>Finished</Button>
+                  </Button.Group>
                 </Form.Field>
                 <Button
                   type="submit"

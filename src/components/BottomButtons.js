@@ -8,14 +8,11 @@ const Buttons = () => {
     try {
       await signOut(auth);
       navigate("/");
-    } catch (error) {
-      console.log(error.message);
-    }
+    } catch (error) {}
   };
   onAuthStateChanged(auth, (user) => {
     if (user != null) {
     } else {
-      //console.log("no user");
     }
   });
   return (
