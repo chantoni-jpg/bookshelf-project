@@ -93,7 +93,15 @@ function Shelves() {
     if (!values.lname) {
       errors.lname = "Author Name Is Required!";
     }
-
+    if (!values.release) {
+      errors.release = "Book Title is Required!";
+    }
+    if (!values.bdescrip) {
+      errors.bdescrip = "Author Name Is Required!";
+    }
+    if (!values.bnotes) {
+      errors.bnotes = "Author Name Is Required!";
+    }
     return errors;
   };
 
@@ -188,11 +196,11 @@ function Shelves() {
                       </Modal.Content>
                     ) : (
                       <Modal.Content>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.book}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.book}
@@ -200,11 +208,11 @@ function Shelves() {
                           name="book"
                           onChange={handleOnChange}
                         ></Input>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.fname}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.fname}
@@ -212,11 +220,11 @@ function Shelves() {
                           name="fname"
                           onChange={handleOnChange}
                         ></Input>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.lname}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.lname}
@@ -224,11 +232,11 @@ function Shelves() {
                           name="lname"
                           onChange={handleOnChange}
                         ></Input>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.release}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.release}
@@ -236,11 +244,11 @@ function Shelves() {
                           name="release"
                           onChange={handleOnChange}
                         ></Input>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.bdescrip}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.bdescrip}
@@ -248,11 +256,11 @@ function Shelves() {
                           name="bdescrip"
                           onChange={handleOnChange}
                         ></Input>
-                        {/* {bookErrors.book ? (
+                        {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.bnotes}
                           </Label>
-                        ) : null} */}
+                        ) : null}
                         <Input
                           type="text"
                           value={values.bnotes}
