@@ -17,7 +17,6 @@ import {
   updateDoc,
 } from "firebase/firestore";
 import { db } from "../firebase";
-import { async } from "@firebase/util";
 function Shelves() {
   const deleteBook = async (id) => {
     const bookDoc = doc(db, "books", id);
@@ -55,17 +54,6 @@ function Shelves() {
   const openEdit = async () => {
     setEditForm(true);
   };
-
-  // const openBookDetails = (id) => {
-  //   setOpen(!open);
-
-  //   const books = books.find((b) => {
-  //     return id === b.id;
-  //   });
-  //   setCurBook(books);
-  // };
-
-  // console.log(curBook);
 
   const handleOnChange = (e) => {
     const { name, value } = e.target;
@@ -105,15 +93,7 @@ function Shelves() {
     if (!values.lname) {
       errors.lname = "Author Name Is Required!";
     }
-    if (!values.release) {
-      errors.lname = "Release Date is Required!";
-    }
-    if (!values.descrip) {
-      errors.lname = "Book Description is Required!";
-    }
-    if (!values.notes) {
-      errors.lname = "Book Notes Are Required!";
-    }
+
     return errors;
   };
 
@@ -121,7 +101,7 @@ function Shelves() {
     <div className="shelves">
       <div className="read">
         <Segment padded="very">
-          Read
+          Your Books
           {books.map((book, idx) => {
             return (
               <Card key={idx} color="pink">
@@ -208,11 +188,11 @@ function Shelves() {
                       </Modal.Content>
                     ) : (
                       <Modal.Content>
-                        {bookErrors.book ? (
+                        {/* {bookErrors.book ? (
                           <Label basic color="red" pointing size="tiny">
                             {bookErrors.book}
                           </Label>
-                        ) : null}
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.book}
@@ -220,6 +200,11 @@ function Shelves() {
                           name="book"
                           onChange={handleOnChange}
                         ></Input>
+                        {/* {bookErrors.book ? (
+                          <Label basic color="red" pointing size="tiny">
+                            {bookErrors.fname}
+                          </Label>
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.fname}
@@ -227,6 +212,11 @@ function Shelves() {
                           name="fname"
                           onChange={handleOnChange}
                         ></Input>
+                        {/* {bookErrors.book ? (
+                          <Label basic color="red" pointing size="tiny">
+                            {bookErrors.lname}
+                          </Label>
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.lname}
@@ -234,6 +224,11 @@ function Shelves() {
                           name="lname"
                           onChange={handleOnChange}
                         ></Input>
+                        {/* {bookErrors.book ? (
+                          <Label basic color="red" pointing size="tiny">
+                            {bookErrors.release}
+                          </Label>
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.release}
@@ -241,6 +236,11 @@ function Shelves() {
                           name="release"
                           onChange={handleOnChange}
                         ></Input>
+                        {/* {bookErrors.book ? (
+                          <Label basic color="red" pointing size="tiny">
+                            {bookErrors.bdescrip}
+                          </Label>
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.bdescrip}
@@ -248,6 +248,11 @@ function Shelves() {
                           name="bdescrip"
                           onChange={handleOnChange}
                         ></Input>
+                        {/* {bookErrors.book ? (
+                          <Label basic color="red" pointing size="tiny">
+                            {bookErrors.bnotes}
+                          </Label>
+                        ) : null} */}
                         <Input
                           type="text"
                           value={values.bnotes}
@@ -279,12 +284,6 @@ function Shelves() {
             );
           })}
         </Segment>
-      </div>
-      <div className="current">
-        <Segment padded="very">Currently Reading</Segment>
-      </div>
-      <div className="finished">
-        <Segment padded="very">Finished</Segment>
       </div>
     </div>
   );
